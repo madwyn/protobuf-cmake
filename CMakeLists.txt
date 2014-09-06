@@ -96,6 +96,8 @@ configure_file("config.h.in" "config.h")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
+option(BUILD_TESTS "Build tests" ON)
+
 set(PROTOBUF_ROOT "" CACHE PATH "Location of protobuf sources.")
 option(DOWNLOAD_PROTOBUF "Download Protobuf sources." ON)
 
@@ -119,4 +121,10 @@ endif()
 add_subdirectory(libprotobuf)
 add_subdirectory(libprotoc)
 add_subdirectory(protoc)
-
+if (BUILD_TESTS)
+  enable_testing()
+  include(Dart)
+  set(DART_TESTING_TIMEOUT 5)
+  add_subdirectory(tests)
+endif()
+  
