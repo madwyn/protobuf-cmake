@@ -37,6 +37,14 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/subprocess.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_string_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.cc
+
+  # new at 2.6.0
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_context.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_generator_factory.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_lazy_message_field.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_message_field.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_name_resolver.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_shared_code_generator.cc
   )
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)

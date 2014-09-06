@@ -16,6 +16,7 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/io/coded_stream.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/io/gzip_stream.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/io/printer.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/io/strtod.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/io/tokenizer.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream_impl.cc
@@ -40,6 +41,23 @@ append_if_exist(SOURCES
 #  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.cc
 )
 
+append_if_exist(SOURCES_LITE
+  ${PROTOBUF_ROOT}/src/google/protobuf/extension_set.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/extension_set.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/message_lite.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/repeated_field.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/io/coded_stream.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/io/zero_copy_stream_impl_lite.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/wire_format_lite.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_gcc.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_msvc.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/common.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stringprintf.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/generated_message_util.cc
+)
+
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
     add_definitions("-DLIBPROTOBUF_EXPORTS")
 endif()
@@ -47,20 +65,23 @@ endif()
 add_library( libprotobuf ${SOURCES} )
 set_target_properties(libprotobuf PROPERTIES OUTPUT_NAME "protobuf")
 
+add_library( libprotobuf_lite ${SOURCES_LITE} )
+set_target_properties(libprotobuf_lite PROPERTIES OUTPUT_NAME "protobuf-lite")
+
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
     # Install a spare copy of the dlls to the bin directory for use by protoc.exe
-    install(TARGETS libprotobuf
+    install(TARGETS libprotobuf libprotobuf_lite
         DESTINATION ${BIN_DIR}
       )
 endif()
 
-install(TARGETS libprotobuf
+install(TARGETS libprotobuf libprotobuf_lite
     # Don't specify 'LIBRARY' here since that causes problems when
     # Trying to install DLL libraries
      DESTINATION ${LIB_DIR}
     )
 
-# TODO: protobuf-lite
+
 
 # Install development headers
 append_if_exist(INSTALL_FILES_LIST
@@ -84,6 +105,7 @@ append_if_exist(INSTALL_FILES_LIST
     ${PROTOBUF_ROOT}/src/google/protobuf/generated_message_reflection.h
     ${PROTOBUF_ROOT}/src/google/protobuf/generated_message_util.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/coded_stream.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/io/coded_stream_inl.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/gzip_stream.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/printer.h
     ${PROTOBUF_ROOT}/src/google/protobuf/io/tokenizer.h
@@ -105,8 +127,14 @@ append_if_exist(INSTALL_FILES_LIST
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_gcc.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/atomicops_internals_x86_msvc.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/common.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/hash.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/map_util.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/once.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/platform_macros.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stl_util.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/stringprintf.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/strutil.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/stubs/substitute.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/template_util.h
     ${PROTOBUF_ROOT}/src/google/protobuf/stubs/type_traits.h
     ${PROTOBUF_ROOT}/src/google/protobuf/text_format.h
