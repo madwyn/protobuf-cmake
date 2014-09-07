@@ -96,7 +96,7 @@ configure_file("config.h.in" "config.h")
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-option(BUILD_TESTS "Build tests" ON)
+option(BUILD_TESTS "Build tests" OFF)
 
 set(PROTOBUF_ROOT "" CACHE PATH "Location of protobuf sources.")
 option(DOWNLOAD_PROTOBUF "Download Protobuf sources." ON)
