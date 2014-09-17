@@ -103,7 +103,7 @@ option(DOWNLOAD_PROTOBUF "Download Protobuf sources." ON)
 
 if (NOT PROTOBUF_ROOT AND DOWNLOAD_PROTOBUF)
 
-  protobuf_download_and_extract("2.5.0" PROTOBUF_SOURCE_PATH)
+  protobuf_download_and_extract("2.6.0" PROTOBUF_SOURCE_PATH)
 
   if(PROTOBUF_SOURCE_PATH)
     set(PROTOBUF_ROOT "${PROTOBUF_SOURCE_PATH}" CACHE
