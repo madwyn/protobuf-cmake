@@ -98,7 +98,10 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 option(BUILD_TESTS "Build tests" OFF)
 
-set(PROTOBUF_ROOT "" CACHE PATH "Location of protobuf sources.")
+if (NOT PROTOBUF_ROOT)
+    set(PROTOBUF_ROOT "" CACHE PATH "Location of protobuf sources.")
+endif()
+
 option(DOWNLOAD_PROTOBUF "Download Protobuf sources." ON)
 
 if (NOT PROTOBUF_ROOT AND DOWNLOAD_PROTOBUF)
