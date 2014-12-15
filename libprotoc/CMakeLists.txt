@@ -96,6 +96,7 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_message.h
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_primitive_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/python/python_generator.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/ruby/ruby_generator.cc
   )
 
 if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
@@ -114,4 +115,4 @@ if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
 endif()
 install(TARGETS libprotoc
     DESTINATION ${LIB_DIR}
-    )
+)

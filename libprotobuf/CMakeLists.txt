@@ -16,7 +16,6 @@ append_if_exist(SOURCES_LITE
   ${PROTOBUF_ROOT}/src/google/protobuf/arenastring.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/extension_set.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/generated_message_util.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/map_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/message_lite.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/repeated_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/wire_format_lite.cc
@@ -40,6 +39,7 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/dynamic_message.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/extension_set_heavy.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/generated_message_reflection.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/map_field.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/message.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/reflection_internal.h
   ${PROTOBUF_ROOT}/src/google/protobuf/reflection_ops.cc
@@ -152,7 +152,9 @@ append_if_exist(INSTALL_FILES_LIST
     ${PROTOBUF_ROOT}/src/google/protobuf/compiler/plugin.pb.h
     ${PROTOBUF_ROOT}/src/google/protobuf/compiler/cpp/cpp_generator.h
     ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_generator.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_generator.h
     ${PROTOBUF_ROOT}/src/google/protobuf/compiler/python/python_generator.h
+    ${PROTOBUF_ROOT}/src/google/protobuf/compiler/ruby/ruby_generator.h
     )
 
 foreach(fil ${INSTALL_FILES_LIST})
