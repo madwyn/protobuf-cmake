@@ -74,27 +74,29 @@ append_if_exist(SOURCES
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_string_field.h
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_enum.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_enum_field.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_extension.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_field.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_file.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_generator.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_helpers.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_message.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_message_field.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_params.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_primitive_field.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_enum_field.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_enum.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_extension.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_field.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_file.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_generator.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_helpers.h
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_message_field.cc
-  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_message.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_enum.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_enum.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_enum_field.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_enum_field.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_extension.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_extension.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_field.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_field.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_file.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_file.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_generator.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_generator.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_helpers.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_helpers.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_map_field.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_map_field.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_message.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_message.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_message_field.cc
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_message_field.h
+  ${PROTOBUF_ROOT}/src/google//protobuf/compiler/javanano/javanano_params.h
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_primitive_field.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/javanano/javanano_primitive_field.h
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/python/python_generator.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/ruby/ruby_generator.cc
   )
