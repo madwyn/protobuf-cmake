@@ -80,12 +80,12 @@ set(PROTOBUF_TEST_SRC
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_plugin_unittest.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/java/java_doc_comment_unittest.cc
   ${PROTOBUF_ROOT}/src/google/protobuf/compiler/python/python_plugin_unittest.cc
-  google/protobuf/unittest.pb.cc
-  google/protobuf/unittest_custom_options.pb.cc
-  google/protobuf/unittest_import.pb.cc
-  google/protobuf/unittest_import_public.pb.cc
-  google/protobuf/unittest_mset.pb.cc
-  google/protobuf/compiler/cpp/cpp_test_bad_identifiers.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/unittest.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/unittest_custom_options.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/unittest_import.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/unittest_import_public.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/unittest_mset.pb.cc
+  ${PROTOBUF_ROOT}/src/google/protobuf/compiler/cpp/cpp_test_bad_identifiers.pb.cc
 )
 
 set(LAZY_TEST_SRC 
